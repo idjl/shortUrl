@@ -1,0 +1,111 @@
+/*标题*/
+.title
+{
+    font-size: 3.5rem;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    color: #dc3545;
+}
+
+
+/*input框*/
+.content
+{
+    margin-top: 1rem;
+    border: 1px solid #ccc;
+}
+.content:hover{
+    border: 1px solid #dc3545;
+}
+.input-group-lg label
+{
+    font-size: 1.5rem;
+
+    margin-top: 1rem;
+    margin-bottom: 0;
+
+    color: #666;
+}
+.input-group-sm label
+{
+    font-size: 1.1rem;
+
+    margin-top: 1rem;
+    margin-bottom: 0;
+
+    color: #666;
+}
+.form-control
+{
+    border: 1px solid #ccc;
+}
+.form-control-lg,
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-append > .btn,
+.input-group-lg > .input-group-append > .input-group-text,
+.input-group-lg > .input-group-prepend > .btn,
+.input-group-lg > .input-group-prepend > .input-group-text
+{
+    font-size: 1.25rem;
+    line-height: 1.5;
+
+    padding: .5rem 1rem;
+}
+.input-group > .form-control:not(:first-child)
+{
+    -moz-border-radius: .5rem;
+         border-radius: .5rem;
+}
+.form-control:focus
+{
+    color: #495057;
+    border-color: #80bdff;
+    outline: 0;
+    background-color: #fff;
+    /*box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);*/
+    -webkit-box-shadow: 0 0 0 .2rem rgba(220, 53, 69, .1);
+       -moz-box-shadow: 0 0 0 .2rem rgba(220, 53, 69, .1);
+            box-shadow: 0 0 0 .2rem rgba(220, 53, 69, .1);
+}
+
+/*button按钮*/
+button
+{
+    font-weight: bold;
+
+    margin: 2rem;
+}
+/*友情链接*/
+.friendLink
+{
+    font-size: 1.2rem;
+
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+.friendLink a
+{
+    text-decoration: none;
+}
+.friendLink a:hover
+{
+    text-decoration: underline;
+
+    color: #dc3545;
+}
+
+/*二维码*/
+.qrcode
+{
+    width: 200px;
+    height: 200px;
+    margin: 1rem auto;
+
+    border: 1px solid #ccc;
+    -moz-border-radius: 5px;
+         border-radius: 5px;
+    -moz-background-size: cover;
+         background-size: cover;
+}
