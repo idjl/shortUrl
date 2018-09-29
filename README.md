@@ -20,3 +20,9 @@ $siteUrl = "https://51015.cn/d";
 
 http://51015.cn/d/
 
+#### 新增分支randChar，短网址形式为：5位小写字母和数字混合
+
+git clone https://github.com/idjl/shortUrl.git
+
+git pull origin randChar
+
