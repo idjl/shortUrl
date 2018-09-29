@@ -24,5 +24,5 @@ http://51015.cn/d/
 
 git clone https://github.com/idjl/shortUrl.git
 
-git pull origin randChar
+git checkout randChar
 
