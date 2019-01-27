@@ -20,7 +20,7 @@ $siteUrl = "https://51015.cn/d";
 
 ![输入图片说明](https://raw.githubusercontent.com/idjl/shortUrl/master/%E6%88%AA%E5%9B%BE/%E6%88%AA%E5%9B%BE1.jpg)
 
-![输入图片说明](https://raw.githubusercontent.com/idjl/shortUrl/master/%E6%88%AA%E5%9B%BE/%E6%88%AA%E5%9B%BE2.jpg")
+![输入图片说明](https://raw.githubusercontent.com/idjl/shortUrl/master/%E6%88%AA%E5%9B%BE/%E6%88%AA%E5%9B%BE2.jpg)
 
 
 #### 新增分支randChar，短网址形式为：5位小写字母和数字混合
