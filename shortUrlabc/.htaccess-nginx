@@ -1,0 +1,1 @@
+rewrite ^(.*)/([0-9a-zA-Z]*)$ $1/index.php?id=$2 last;

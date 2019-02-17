@@ -1,10 +1,10 @@
 <?php
 // 修改此处，比较简单就没有单独提取config
-$siteTitle = "51015.cn/d短网址";
-$siteUrl = "https://51015.cn/d";
+$siteTitle = "51015.cn/ss短网址";       //网站标题
+$siteUrl = "https://www.51015.cn/ss";  //短网址域名
 $file = 'urls.php';               // 本地存放 URLS 的文件
 $use_rewrite = 1;                 // 是否使用伪静态
-$maxnum = 1000;                   //1000个之后，重0开始，保存备份需要整个文件夹给予777权限
+$maxnum = 10000;                   //10000个之后，重0开始，保存备份需要整个文件夹给予777权限
 // 以下内容根据需要修改
 error_reporting(E_ALL ^ E_NOTICE);//显示除去 E_NOTICE 之外的所有错误信息
 ob_start();   //开启ob缓存
@@ -122,6 +122,7 @@ if($action == 'redirect'){
             <span>友情链接</span>
             <a href="http://t.tl/" target="_blank">t.tl短网址</a>
             <a href="http://dwz.cn/"  target="_blank">百度短网址</a>
+            <a href="https://github.com/idjl/shortUrl"  target="_blank">源码下载</a>
         </p>
     </div>
 
