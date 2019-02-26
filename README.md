@@ -9,6 +9,8 @@ shortUrl123短网址是依次增加的数字；shortUrlabc短网址是随机产�
 
 #### 使用说明
 
+将shortUrl123（或shortUrlabc）文件夹内所有文件复制到你的项目中。
+
 需要urls.php文件修改为777权限
 
 修改index.php中的$siteTitle和$siteUrl即可，可以放二级文件夹使用
