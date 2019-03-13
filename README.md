@@ -35,3 +35,9 @@ apache可以直接使用；nginx需要配置文件中引入.htaccess-nginx
 
 nignx引入教程：https://blog.csdn.net/u010071211/article/details/85689930
 
+#### 二维码生成接口
+
+https://tool.kd128.com/qrcode?text=https://51015.cn
+
+https://bshare.optimix.asia/barCode?site=weixin&url=https://51015.cn
+
