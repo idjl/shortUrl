@@ -1,43 +1,53 @@
-# 不用数据库的短网址
+# 不用数据库的短网址V2.0
 
-一直没找到一个好用的网址缩短工具，所以自己写了一个
+未使用数据库，利用php的数组保存数据，可以放二级文件夹使用
 
-shortUrl123短网址是依次增加的数字；shortUrlabc短网址是随机产生小写字母和数字混合形式；两者相互独立，互不影响。
+生成二维码改为jquery.qrcode.js
 
-前端为bootstrap自适应，后端利用php的数组保存短网址
+生成短网址的形式：默认是5位小写字母和数字，可选从1开始依次增加的数字
 
 
 #### 使用说明
 
-将shortUrl123（或shortUrlabc）文件夹内所有文件复制到你的项目中。
+0、将所有文件复制到你的项目中。
 
-需要urls.php文件修改为777权限
+1、urls123.php和urlsabc.php文件需设置为777权限
 
-修改index.php中的$siteTitle和$siteUrl即可，可以放二级文件夹使用
+2、修改config.php
 
 ```html
-$siteTitle = "51015.cn/ss短网址";
-$siteUrl = "https://51015.cn/ss";
+'title' => "短网址演示",                     //网站标题
+'site' => "https://51015.cn/demo/shortUrl",  //短网址域名
+//不允许缩短的域名，单个匹配，*表示所有的二级域名
+'blackList' => array('*.51015.cn','baidu1.com','youku1.com'),
+'key' => "idjl",                             //token 使用的密钥
+
+//根据需求修改
+'use_rewrite' => 1,                          // 是否使用伪静态,默认使用
+//生成的短网址类型：abc表示字母数字混合，123为纯数字累加方式
+'type' => 'abc',
 ```
 
-#### 演示图片
+3、访问你设置的短网址域名/index.php
 
-![输入图片说明](https://raw.githubusercontent.com/idjl/shortUrl/master/%E6%88%AA%E5%9B%BE/1.jpg)
+4、如果你使用了这套代码，请给本项目点个Star
 
-![输入图片说明](https://raw.githubusercontent.com/idjl/shortUrl/master/%E6%88%AA%E5%9B%BE/2.jpg)
+#### 演示地址
+
+https://51015.cn/demo/shortUrl/index.php
 
 
 #### 伪静态的使用
 
-默认开启伪静态，可以关闭
 
-apache可以直接使用；nginx需要配置文件中引入.htaccess-nginx
+默认开启伪静态，可以关闭，config.php中修改'use_rewrite' => 2即可。
+
+apache可以直接使用；
+
+nginx需要配置文件中引入.htaccess-nginx
 
 nignx引入教程：https://blog.csdn.net/u010071211/article/details/85689930
 
-#### 二维码生成接口
 
-https://tool.kd128.com/qrcode?text=https://51015.cn
 
-https://bshare.optimix.asia/barCode?site=weixin&url=https://51015.cn
 
