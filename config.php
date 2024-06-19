@@ -22,4 +22,8 @@ $config = array(
 	'use_rewrite' => 1,                          // 是否使用伪静态,默认使用
 	//生成的短网址类型：abc表示字母数字混合，123为纯数字累加方式
 	'type' => 'abc',
+
+    // 管理后台登录账号和密码
+    'adminUser' => 'admin',
+    'adminPWD' => 'aB12345!',
 );

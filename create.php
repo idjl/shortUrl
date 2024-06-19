@@ -53,7 +53,7 @@ if ($id) {
         exit();
     }
     //判断是否正则为正确的网址
-    $regex = "/^(https?:\/\/)([\w-]+\.)+[\w-]+(\/[\w-.\/?%&=#]*)?$/i";
+    $regex = "/^(https?:\/\/)([\w\-]+\.)+[\w\-]+(\/[\w\-.\/?%&=#+]*)?$/i";
     if (!preg_match($regex, $url)) {
         $message = '请输入正确的URL地址';
         echo json_encode(array('code' => 8002, 'message' => $message));

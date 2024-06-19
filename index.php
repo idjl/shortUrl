@@ -55,7 +55,6 @@ $token = makeToken($config['key']);
 	        <p class="friendLink">
 	            <span>友情链接</span>
 	            <a href="http://t.tl/" target="_blank">t.tl短网址</a>
-	            <a href="http://dwz.cn/"  target="_blank">百度短网址</a>
 	            <a href="https://github.com/idjl/shortUrl"  target="_blank">源码下载</a>
 	        </p>
 	    </div>

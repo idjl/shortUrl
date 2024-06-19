@@ -66,7 +66,7 @@ function createId($len){
     $str = 'abcdefghijklmnopqrstuvwxyz0123456789';
     $key = '';
     for($i = 0;$i < $len;$i++){
-        $key .= $str{mt_rand(0,strlen($str)-1)};
+        $key .= $str[mt_rand(0,strlen($str)-1)];
     }
     return $key;
 }
