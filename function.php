@@ -11,17 +11,12 @@
 //生成前台的验证 token
 function makeToken($key){
     //1000秒内有效，不变
-    return $token = md5($key.sha1(substr(time(),3,4)));
+    return md5($key.sha1(substr(time(),3,4)));
 }
 
 //后台验证token
 function checkToken($key,$token){
-    $true = md5($key.sha1(substr(time(),3,4)));
-    if($token == $true){
-        return true;
-    }else{
-        return false;
-    }
+    return hash_equals(makeToken($key), $token);
 }
 
 //不允许缩短的域名，黑名单判断
@@ -60,8 +55,6 @@ function getTopHost($host){
 
 //生成大小写字母和数字随机字符串
 function createId($len){
-    //大小写字母和数字混用
-    //$str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     //小写字母和数字混用
     $str = 'abcdefghijklmnopqrstuvwxyz0123456789';
     $key = '';
@@ -78,5 +71,47 @@ function checkId($arr,$id){
     }else{
         $id = createId(5);
         return checkId($arr,$id);
+    }
+}
+
+//获取JSON数据文件路径
+function getSaveFile($config){
+    if ($config['type'] == 'abc') {
+        return 'urlsabc.json';
+    } elseif ($config['type'] == '123') {
+        return 'urls123.json';
+    } else {
+        exit('config.php中设置错误，请检查。');
+    }
+}
+
+//从JSON文件读取数据
+function loadUrls($saveFile){
+    if (!is_writable($saveFile) || !is_readable($saveFile)) {
+        die('请将' . $saveFile . '文件设置为可读写权限');
+    }
+    $json = file_get_contents($saveFile);
+    $arr = json_decode($json, true);
+    return is_array($arr) ? $arr : array();
+}
+
+//保存数据到JSON文件（加锁防并发）
+function saveUrls($saveFile, $arr){
+    file_put_contents($saveFile, json_encode($arr, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT), LOCK_EX);
+}
+
+//输出JSON响应
+function jsonResponse($code, $message, $extra = []){
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(array_merge(['code' => $code, 'message' => $message], $extra), JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+//验证后台登录状态，未登录则跳转到登录页
+function checkAdmin(){
+    session_start();
+    if(empty($_SESSION['admin_logged'])){
+        header('Location: login.php');
+        exit;
     }
 }
